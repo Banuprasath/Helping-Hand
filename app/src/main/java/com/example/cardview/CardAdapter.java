@@ -9,8 +9,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.example.cardview.Pg4.Calculator;
 import com.example.cardview.Pg1.pg1page1;
+import com.example.cardview.Pg4.pg4Page1;
 
 import java.util.List;
 
@@ -57,6 +58,14 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 break;
             case 4:
                 holder.imageView.setImageResource(R.drawable.pg5);
+
+                holder.itemView.setOnClickListener(view -> {
+                    // Navigate to the corresponding activity
+                    Toast.makeText(holder.itemView.getContext(), "Opening How to Install JDK", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(view.getContext(), pg4Page1.class);
+                    view.getContext().startActivity(intent);
+                });
+
                 break;
             case 5:
                 holder.imageView.setImageResource(R.drawable.pg6);
