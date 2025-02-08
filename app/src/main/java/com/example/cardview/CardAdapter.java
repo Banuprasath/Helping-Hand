@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cardview.Pg4.Calculator;
 import com.example.cardview.Pg1.pg1page1;
 import com.example.cardview.Pg4.pg4Page1;
+import com.example.cardview.pg2.pg2Page1;
+import com.example.cardview.pg2.pg2Page2;
 
 import java.util.List;
 
@@ -49,6 +51,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 break;
             case 1:
                 holder.imageView.setImageResource(R.drawable.pg2);
+                holder.itemView.setOnClickListener(view -> {
+                    // Navigate to the corresponding activity
+                    Toast.makeText(holder.itemView.getContext(), "Opening How to Install JDK", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(view.getContext(), pg2Page1.class);
+                    view.getContext().startActivity(intent);
+                });
+
                 break;
             case 2:
                 holder.imageView.setImageResource(R.drawable.pg3);
@@ -61,7 +70,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
                 holder.itemView.setOnClickListener(view -> {
                     // Navigate to the corresponding activity
-                    Toast.makeText(holder.itemView.getContext(), "Opening How to Install JDK", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(holder.itemView.getContext(), " GUI components, fonts and colours.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), pg4Page1.class);
                     view.getContext().startActivity(intent);
                 });
