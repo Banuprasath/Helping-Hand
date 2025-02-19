@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp"
+    android:background="#F5F5F5">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter text here"
+        android:padding="10dp"
+        android:background="@android:drawable/editbox_background"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btnPickColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Color"
+            android:layout_margin="5dp"
+            />
+
+        <Button
+            android:id="@+id/btnPickFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Font"
+            android:layout_margin="2dp"/>
+
+        <Button
+            android:id="@+id/btnIncreaseSize"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:text="A+"
+            android:layout_margin="2dp"/>
+
+        <Button
+            android:id="@+id/btnDecreaseSize"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:text="A-"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your text will appear here!"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

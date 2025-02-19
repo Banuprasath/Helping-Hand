@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.scrollview.widget.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:padding="16dp"
+        android:lineSpacingExtra="8dp"
+        android:textColor="@android:color/black"
+        android:text="
+
+<b>Installing and Configuring Java Development Kit (JDK):</b>
+
+1. Download the JDK installer from the official Oracle website: 
+<i>https://www.oracle.com/java/technologies/javase-jdk11-downloads.html</i>.
+
+2. Run the installer and follow the on-screen instructions.
+
+3. Set the <b>JAVA_HOME</b> environment variable to the JDK directory.
+
+4. Add the JDK bin folder to the <b>PATH</b> environment variable for command-line access.
+
+<b>Installing Android Studio:</b>
+
+1. Go to the official Android Studio website: 
+<i>https://developer.android.com/studio</i>.
+
+2. Download the installer for your operating system (Windows, macOS, or Linux).
+
+3. Follow the installation guide to complete the setup process.
+
+4. After installation, open Android Studio and complete the initial setup wizard.
+
+<b>Configuring Android SDK:</b>
+
+1. Open Android Studio.
+
+2. Go to <b>File > Settings > Appearance & Behavior > System Settings > Android SDK</b>.
+
+3. In the SDK Platforms tab, ensure the latest SDK version is selected.
+
+4. In the SDK Tools tab, ensure that Android SDK Build-Tools, Android SDK Platform-Tools, and Android SDK Tools are installed.
+
+5. Click on <i>OK</i> to save the settings.
+
+<b>Notes:</b>
+
+- Make sure your system meets the minimum system requirements for Android Studio.
+- Update Android Studio and the SDK regularly for the latest features and bug fixes.
+"
+        android:scrollbars="vertical"
+        android:movementMethod="android.text.method.ScrollingMovementMethod" />
+</androidx.scrollview.widget.ScrollView>
