@@ -1,40 +1,42 @@
 package com.example.cardview;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.work.PeriodicWorkRequest;
-import androidx.work.WorkManager;
+import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.cardview.Pg3.MotivationQuote;
+import com.example.cardview.Pg1.pg1page1;
+import com.example.cardview.Pg3.Pg3page1;
+import com.example.cardview.Pg4.pg4Page1;
+import com.example.cardview.pg2.pg2Page1;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-            //Schedule Notifiction Pg3
-       // scheduleDailyNotification();
-        //Schedule Notifiction Pg3
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 
+        // Initialize ViewPager2
+        ViewPager2 viewPager = findViewById(R.id.viewPager);
+
+        // List of 9 cards
         List<CardItem> cardList = new ArrayList<>();
-        int[] images = {R.drawable.pg1, R.drawable.pg2, R.drawable.pg3,
-                R.drawable.pg4, R.drawable.pg5, R.drawable.pg6,
-                R.drawable.pg7, R.drawable.pg8, R.drawable.pg9};
+        cardList.add(new CardItem(R.drawable.pg1, "How to Install JDK", pg1page1.class));
+        cardList.add(new CardItem(R.drawable.pg2, "Page 2", pg2Page1.class));
+        cardList.add(new CardItem(R.drawable.pg3, "Motivation Quotes", Pg3page1.class));
+        cardList.add(new CardItem(R.drawable.pg4, "Page 4", pg4Page1.class));
+        cardList.add(new CardItem(R.drawable.pg5, "GUI Components", pg4Page1.class));
+        cardList.add(new CardItem(R.drawable.pg6, "Page 6", null));
+        cardList.add(new CardItem(R.drawable.pg7, "Page 7", null));
+        cardList.add(new CardItem(R.drawable.pg8, "Page 8", null));
+        cardList.add(new CardItem(R.drawable.pg9, "Page 9", null));
 
-        for (int i = 0; i < 9; i++) {
-            cardList.add(new CardItem(images[i], "Card " + (i + 1)));
-
-        }
-
-        recyclerView.setAdapter(new CardAdapter(cardList));
+        // Set the adapter
+        SwipeCardAdapter adapter = new SwipeCardAdapter(cardList);
+        viewPager.setAdapter(adapter);
     }
-
 }
