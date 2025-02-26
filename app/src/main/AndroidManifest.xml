@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CardView"
         tools:targetApi="31">
+        <activity
+            android:name=".Pg3.Pg3page1"
+            android:exported="false" />
+        <activity
+            android:name=".Pg3.MotivationQuote"
+            android:exported="false" />
         <activity
             android:name=".pg2.pg2Page1"
             android:exported="false" />
