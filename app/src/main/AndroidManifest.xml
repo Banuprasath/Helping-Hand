@@ -16,6 +16,18 @@
         android:theme="@style/Theme.CardView"
         tools:targetApi="31">
         <activity
+            android:name=".Pg5.QuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pg6.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pg6.TaskAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".Pg6.DatabaseHelper"
+            android:exported="false" />
+        <activity
             android:name=".Pg3.Pg3page1"
             android:exported="false" />
         <activity
