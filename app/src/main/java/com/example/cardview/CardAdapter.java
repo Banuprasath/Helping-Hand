@@ -15,6 +15,7 @@ import com.example.cardview.Pg3.Pg3page1;
 import com.example.cardview.Pg4.Calculator;
 import com.example.cardview.Pg1.pg1page1;
 import com.example.cardview.Pg4.pg4Page1;
+import com.example.cardview.Pg6.MainActivity;
 import com.example.cardview.pg2.pg2Page1;
 import com.example.cardview.pg2.pg2Page2;
 
@@ -75,23 +76,34 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 break;
             case 3:
                 holder.imageView.setImageResource(R.drawable.pg4);
+
+                holder.itemView.setOnClickListener(view -> {
+                    // Navigate to the corresponding activity
+                    Toast.makeText(holder.itemView.getContext(), " Calculator", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(view.getContext(), pg4Page1.class);
+                    view.getContext().startActivity(intent);
+                });
                 break;
             case 4:
                 holder.imageView.setImageResource(R.drawable.pg5);
 
-                holder.itemView.setOnClickListener(view -> {
-                    // Navigate to the corresponding activity
-                    Toast.makeText(holder.itemView.getContext(), " GUI components, fonts and colours.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(view.getContext(), pg4Page1.class);
-                    view.getContext().startActivity(intent);
-                });
 
                 break;
             case 5:
                 holder.imageView.setImageResource(R.drawable.pg6);
+
+                holder.itemView.setOnClickListener(view -> {
+                    // Navigate to the corresponding activity
+                    Toast.makeText(holder.itemView.getContext(), " To-Do List", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(view.getContext(), MainActivity.class);
+                    view.getContext().startActivity(intent);
+                });
+
                 break;
             case 6:
                 holder.imageView.setImageResource(R.drawable.pg7);
+
+
                 break;
             case 7:
                 holder.imageView.setImageResource(R.drawable.pg8);

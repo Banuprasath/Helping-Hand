@@ -70,7 +70,7 @@ public class MotivationQuote extends AppCompatActivity {
     }
 
     private void scheduleDailyNotification() {
-        PeriodicWorkRequest dailyWorkRequest = new PeriodicWorkRequest.Builder(QuoteWorker.class, 24, TimeUnit.HOURS)
+        PeriodicWorkRequest dailyWorkRequest = new PeriodicWorkRequest.Builder(QuoteWorker.class, 6, TimeUnit.HOURS)
                 .build();
         WorkManager.getInstance(this).enqueue(dailyWorkRequest);
     }
