@@ -15,6 +15,7 @@ import com.example.cardview.Pg3.Pg3page1;
 import com.example.cardview.Pg4.Calculator;
 import com.example.cardview.Pg1.pg1page1;
 import com.example.cardview.Pg4.pg4Page1;
+import com.example.cardview.Pg5.QuizActivity;
 import com.example.cardview.Pg6.MainActivity;
 import com.example.cardview.pg2.pg2Page1;
 import com.example.cardview.pg2.pg2Page2;
@@ -86,6 +87,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 break;
             case 4:
                 holder.imageView.setImageResource(R.drawable.pg5);
+
+                holder.itemView.setOnClickListener(view -> {
+                    // Navigate to the corresponding activity
+                    Toast.makeText(holder.itemView.getContext(), " To-Do List", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(view.getContext(), QuizActivity.class);
+                    view.getContext().startActivity(intent);
+                });
 
 
                 break;

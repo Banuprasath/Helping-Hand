@@ -1,18 +1,23 @@
 package com.example.cardview.Pg5;
 
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+import com.airbnb.lottie.LottieAnimationView;
+import com.example.cardview.R;
+
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Random;
-import com.example.cardview.R;
 
 public class QuizActivity extends AppCompatActivity {
     private TextView questionText;
     private Button option1, option2, option3, option4;
-    private QuestionData questionData;
+    private LottieAnimationView confettiView;
+
+    private String[][] questions = QuestionBank.getQuestions();
     private int currentQuestionIndex;
     private String correctAnswer;
 
@@ -26,51 +31,47 @@ public class QuizActivity extends AppCompatActivity {
         option2 = findViewById(R.id.option2);
         option3 = findViewById(R.id.option3);
         option4 = findViewById(R.id.option4);
+        confettiView = findViewById(R.id.confettiView);
 
-        questionData = new QuestionData();
         loadNewQuestion();
 
-        View.OnClickListener answerListener = view -> {
+        View.OnClickListener answerClickListener = view -> {
             Button clickedButton = (Button) view;
-            checkAnswer(clickedButton.getText().toString());
+            if (clickedButton.getText().toString().equals(correctAnswer)) {
+                showConfetti();  // 🎉 Show confetti animation
+            } else {
+                shakeButton(clickedButton); // 🔴 Wrong answer effect
+            }
+            loadNewQuestion();
         };
 
-        option1.setOnClickListener(answerListener);
-        option2.setOnClickListener(answerListener);
-        option3.setOnClickListener(answerListener);
-        option4.setOnClickListener(answerListener);
+        option1.setOnClickListener(answerClickListener);
+        option2.setOnClickListener(answerClickListener);
+        option3.setOnClickListener(answerClickListener);
+        option4.setOnClickListener(answerClickListener);
     }
 
     private void loadNewQuestion() {
         Random random = new Random();
-        currentQuestionIndex = random.nextInt(questionData.questions.length);
-        String[] questionSet = questionData.questions[currentQuestionIndex];
+        currentQuestionIndex = random.nextInt(questions.length);
 
-        questionText.setText(questionSet[0]);
-        option1.setText(questionSet[1]);
-        option2.setText(questionSet[2]);
-        option3.setText(questionSet[3]);
-        option4.setText(questionSet[4]);
+        questionText.setText(questions[currentQuestionIndex][0]);
+        option1.setText(questions[currentQuestionIndex][1]);
+        option2.setText(questions[currentQuestionIndex][2]);
+        option3.setText(questions[currentQuestionIndex][3]);
+        option4.setText(questions[currentQuestionIndex][4]);
 
-        correctAnswer = questionSet[5]; // Store correct answer
-    }
-
-    private void checkAnswer(String selectedAnswer) {
-        if (selectedAnswer.equals(correctAnswer)) {
-            showConfetti();
-        } else {
-            showWrongAnimation();
-        }
-        loadNewQuestion();
+        correctAnswer = questions[currentQuestionIndex][5];
     }
 
     private void showConfetti() {
-        findViewById(R.id.confettiAnimation).setVisibility(View.VISIBLE);
-        Toast.makeText(this, "🎉 Correct Answer!", Toast.LENGTH_SHORT).show();
+        confettiView.setVisibility(View.VISIBLE);
+        confettiView.playAnimation();  // Play Lottie animation 🎉
     }
 
-    private void showWrongAnimation() {
-        findViewById(R.id.wrongAnimation).setVisibility(View.VISIBLE);
-        Toast.makeText(this, "❌ Wrong Answer!", Toast.LENGTH_SHORT).show();
+    private void shakeButton(Button button) {
+        ObjectAnimator shake = ObjectAnimator.ofFloat(button, "translationX", 0, 10, -10, 10, -10, 0);
+        shake.setDuration(300);
+        shake.start();
     }
 }
