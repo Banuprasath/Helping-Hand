@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "508316299253",
+    "project_id": "jamcat-3e015",
+    "storage_bucket": "jamcat-3e015.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508316299253:android:14a65ea1a7dfe8f34e3abc",
+        "android_client_info": {
+          "package_name": "com.example.cardview"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn24unq4_noXWeoXSQAXLJkGdoGlk9ut0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

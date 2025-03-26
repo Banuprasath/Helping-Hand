@@ -1,6 +1,8 @@
 package com.example.cardview;
 
 import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,6 +10,7 @@ import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
 import com.example.cardview.Pg3.MotivationQuote;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
             //Schedule Notifiction Pg3
        // scheduleDailyNotification();
         //Schedule Notifiction Pg3
+        TextView logout=findViewById(R.id.logout);
+        FirebaseAuth firebaseAuth=FirebaseAuth.getInstance();
+        logout.setOnClickListener(view->{
+            firebaseAuth.signOut();
+        });
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 
