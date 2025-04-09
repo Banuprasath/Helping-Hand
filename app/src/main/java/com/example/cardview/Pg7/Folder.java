@@ -105,6 +105,7 @@ public class Folder extends AppCompatActivity {
 
             String fileName = System.currentTimeMillis() + ".pdf"; // Example for PDFs
             StorageReference fileRef = storageReference.child(fileName);
+            storageReference = FirebaseStorage.getInstance().getReferenceFromUrl("gs://jamcat-3e015.appspot.com/Files").child(folderName);
 
             fileRef.putFile(fileUri)
                     .addOnSuccessListener(taskSnapshot -> fileRef.getDownloadUrl().addOnSuccessListener(uri -> {
