@@ -4,4 +4,16 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primaryColor">#262628</color>
     <color name="purple_500">#6200EE</color>
+
+    <!-- Teal Shades -->
+    <color name="teal_500">#009688</color>
+    <color name="teal_700">#00796B</color>
+
+    <!-- Gradient Colors -->
+    <color name="menu_bg">#90CAF9</color>  <!-- Light Blue -->
+    <color name="menu_text">#0D47A1</color>  <!-- Dark Blue -->
+
+
+    <color name="gradient_start">#009688</color> <!-- Teal 500 -->
+    <color name="gradient_end">#00796B</color>   <!-- Teal 700 -->
 </resources>

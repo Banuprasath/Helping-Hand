@@ -10,15 +10,22 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cardview.Pg3.MotivationQuote;
 import com.example.cardview.Pg3.Pg3page1;
-import com.example.cardview.Pg4.Calculator;
 import com.example.cardview.Pg1.pg1page1;
 import com.example.cardview.Pg4.pg4Page1;
-import com.example.cardview.Pg5.QuizActivity;
+import com.example.cardview.Pg5.pg5page1;
 import com.example.cardview.Pg6.MainActivity;
+import com.example.cardview.Pg6.pg6page1;
+import com.example.cardview.Pg7.Pg7Activity;
+import com.example.cardview.Pg8.Weather;
+import com.example.cardview.Pg8.pg8page8;
+import com.example.cardview.Pg9.FlappyBirdActivity;
+import com.example.cardview.Pg9.FlappyBirdView;
+import com.example.cardview.Pg9.SnakeGameActivity;
+import com.example.cardview.Pg9.pg9page1;
+import com.example.cardview.msg.pg7page7;
+import com.example.cardview.msg.sendSms;
 import com.example.cardview.pg2.pg2Page1;
-import com.example.cardview.pg2.pg2Page2;
 
 import java.util.List;
 
@@ -91,7 +98,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 holder.itemView.setOnClickListener(view -> {
                     // Navigate to the corresponding activity
                     Toast.makeText(holder.itemView.getContext(), " To-Do List", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(view.getContext(), QuizActivity.class);
+                    Intent intent = new Intent(view.getContext(), pg5page1.class);
                     view.getContext().startActivity(intent);
                 });
 
@@ -103,21 +110,38 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 holder.itemView.setOnClickListener(view -> {
                     // Navigate to the corresponding activity
                     Toast.makeText(holder.itemView.getContext(), " To-Do List", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(view.getContext(), MainActivity.class);
+                    Intent intent = new Intent(view.getContext(), pg6page1.class);
                     view.getContext().startActivity(intent);
                 });
 
                 break;
             case 6:
                 holder.imageView.setImageResource(R.drawable.pg7);
-
+                holder.itemView.setOnClickListener(view -> {
+                    // Navigate to the corresponding activity
+                    Toast.makeText(holder.itemView.getContext(), " To-Do List", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(view.getContext(), pg7page7.class);
+                    view.getContext().startActivity(intent);
+                });
 
                 break;
             case 7:
                 holder.imageView.setImageResource(R.drawable.pg8);
+                holder.itemView.setOnClickListener(view -> {
+                    // Navigate to the corresponding activity
+                    Toast.makeText(holder.itemView.getContext(), " To-Do List", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(view.getContext(), pg8page8.class);
+                    view.getContext().startActivity(intent);
+                });
                 break;
             case 8:
                 holder.imageView.setImageResource(R.drawable.pg9);
+                holder.itemView.setOnClickListener(view -> {
+                    // Navigate to the corresponding activity
+                    Toast.makeText(holder.itemView.getContext(), " To-Do List", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(view.getContext(), pg9page1.class);
+                    view.getContext().startActivity(intent);
+                });
                 break;
             default:
                 holder.imageView.setImageResource(R.mipmap.ic_launcher); // Default image

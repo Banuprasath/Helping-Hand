@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <!--
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!- Scoped Storage Permissions for Android 13+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Storage Permissions -->
+    <!-- Scoped Storage for Android 10+ -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> <!-- Legacy Storage (Only for Android <10) -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" /> <!-- Features -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -11,10 +54,75 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CardView"
-        tools:targetApi="31">
+        android:theme="@style/Theme.CardView">
+        <activity
+            android:name=".Pg9.pg9page1"
+            android:exported="false" />
+        <activity
+            android:name=".Pg9.FlappyBirdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pg9.FlappyBirdView"
+            android:exported="false" />
+        <activity
+            android:name=".Pg9.SnakeGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pg8.pg8page8"
+            android:exported="false" />
+        <activity
+            android:name=".msg.pg7page7"
+            android:exported="false" />
+        <activity
+            android:name=".Pg6.pg6page1"
+            android:exported="false" />
+        <activity
+            android:name=".Pg5.pg5page1"
+            android:exported="false" />
+        <activity
+            android:name=".Pg5.pg5page5"
+            android:exported="false" />
+        <activity
+            android:name=".Pg8.Weather"
+            android:exported="false" />
+        <activity
+            android:name=".Weather.WeatherApp"
+            android:exported="false" />
+        <activity
+            android:name=".Pg8.GeoTagActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pg8.GeoTag"
+            android:exported="false"
+            android:theme="@style/Theme.CardView" />
+        <activity
+            android:name=".msg.sendSms"
+            android:exported="false"
+            android:theme="@style/Theme.CardView" />
+        <activity
+            android:name=".login.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pg7.Folder"
+            android:exported="false" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Pg7.Create_Bottom_Sheet"
+            android:exported="false" />
+        <activity
+            android:name=".Pg7.Pg7Activity"
+            android:exported="false" />
         <activity
             android:name=".Pg5.QuizActivity"
             android:exported="false" />
@@ -51,13 +159,7 @@
             android:theme="@style/Theme.CardView" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

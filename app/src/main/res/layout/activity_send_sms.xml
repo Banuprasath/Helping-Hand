@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".msg.sendSms"
+    android:padding="20dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/phoneNumberInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Receiver Number"
+                android:inputType="phone"
+                android:padding="12dp"
+                android:background="@drawable/input_bg"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/messageInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Message"
+                android:inputType="textMultiLine"
+                android:padding="12dp"
+                android:minLines="3"
+                android:maxLines="5"
+                android:background="@drawable/input_bg"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp"/>
+
+            <Button
+                android:id="@+id/sendSmsBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Send SMS"
+                android:textSize="18sp"
+                android:backgroundTint="@color/teal_700"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
