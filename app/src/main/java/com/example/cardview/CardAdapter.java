@@ -45,7 +45,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textView.setText("Card " + (position + 1));
+
+        String PgName[]={"JDK Installation","GUI Components","Notification","Calculator","Quiz","To-DO",
+                "SMS","Weather","Flappy Bird"};
+        holder.textView.setText(PgName[position]);
 
         // Set image using switch-case
         switch (position) {
@@ -65,7 +68,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 holder.imageView.setImageResource(R.drawable.pg2);
                 holder.itemView.setOnClickListener(view -> {
                     // Navigate to the corresponding activity
-                    Toast.makeText(holder.itemView.getContext(), "Opening How to Install JDK", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(holder.itemView.getContext(), "How to use GUI in Android", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), pg2Page1.class);
                     view.getContext().startActivity(intent);
                 });
@@ -76,7 +79,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
                 holder.itemView.setOnClickListener(view -> {
                     // Navigate to the corresponding activity
-                    Toast.makeText(holder.itemView.getContext(), "Opening How to Install JDK", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(holder.itemView.getContext(), "Quotes and Notification Manager", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), Pg3page1.class);
                     view.getContext().startActivity(intent);
                 });
@@ -97,7 +100,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
                 holder.itemView.setOnClickListener(view -> {
                     // Navigate to the corresponding activity
-                    Toast.makeText(holder.itemView.getContext(), " To-Do List", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(holder.itemView.getContext(), "Quiz", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), pg5page1.class);
                     view.getContext().startActivity(intent);
                 });
@@ -109,7 +112,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
                 holder.itemView.setOnClickListener(view -> {
                     // Navigate to the corresponding activity
-                    Toast.makeText(holder.itemView.getContext(), " To-Do List", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(holder.itemView.getContext(), " TO-DO List", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), pg6page1.class);
                     view.getContext().startActivity(intent);
                 });
@@ -119,17 +122,17 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 holder.imageView.setImageResource(R.drawable.pg7);
                 holder.itemView.setOnClickListener(view -> {
                     // Navigate to the corresponding activity
-                    Toast.makeText(holder.itemView.getContext(), " To-Do List", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(holder.itemView.getContext(), "SMS", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), pg7page7.class);
                     view.getContext().startActivity(intent);
                 });
 
                 break;
             case 7:
-                holder.imageView.setImageResource(R.drawable.pg8);
+                holder.imageView.setImageResource(R.drawable.bg_cloudy);
                 holder.itemView.setOnClickListener(view -> {
                     // Navigate to the corresponding activity
-                    Toast.makeText(holder.itemView.getContext(), " To-Do List", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(holder.itemView.getContext(), "Weather Application", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), pg8page8.class);
                     view.getContext().startActivity(intent);
                 });
@@ -138,7 +141,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
                 holder.imageView.setImageResource(R.drawable.pg9);
                 holder.itemView.setOnClickListener(view -> {
                     // Navigate to the corresponding activity
-                    Toast.makeText(holder.itemView.getContext(), " To-Do List", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(holder.itemView.getContext(), " Flappy Bird Game ", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), pg9page1.class);
                     view.getContext().startActivity(intent);
                 });
