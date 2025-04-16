@@ -44,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.pg2, R.drawable.pg2, R.drawable.pg2,
                 R.drawable.pg2, R.drawable.pg2, R.drawable.pg2};
 
+        String PgName[]={"JDK Ins","GUI Components","Notification","Calculator"," Quiz","TO-DO",
+        "SMS","Weather","Flappy Bird"};
         for (int i = 0; i < 9; i++) {
-            cardList.add(new CardItem(images[i], "Card " + (i + 1)));
+            cardList.add(new CardItem(images[i], PgName[i] + (i + 1)));
 
         }
 
